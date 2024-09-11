@@ -123,6 +123,16 @@ func Parse(text string) (interface{}, error) {
 	return v, nil
 }
 
+// ParseJsonObject 解析 json 字符串返回 JSONObject 类型
+func ParseJsonObject(text string) (JSONObject, error) {
+	var v JSONObject
+	err := json.Unmarshal([]byte(text), &v)
+	if err != nil {
+		return nil, err
+	}
+	return v, nil
+}
+
 // ParseObject 解析 json 字符串返回指定类型
 func ParseObject[T any](text string) (T, error) {
 	var v T

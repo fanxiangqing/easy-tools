@@ -79,6 +79,12 @@ func main() {
 	}
 
 	fmt.Println(jsonString)
-}
 
+	parseJsonObject, err := easytools.ParseJsonObject("{\"a\":\"b\"}")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(parseJsonObject)
+}
 ```
