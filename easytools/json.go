@@ -104,6 +104,11 @@ func (o *JSONObject) GetTime(key string) time.Time {
 	return o.Get(key).(time.Time)
 }
 
+// ToJsonString 转换为 json 字符串
+func (o *JSONObject) ToJsonString() (string, error) {
+	return ToJsonString(o)
+}
+
 // ToJsonString 转 json 字符串
 func ToJsonString(source interface{}) (string, error) {
 	bytes, err := json.Marshal(source)
