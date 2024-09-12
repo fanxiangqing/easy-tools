@@ -26,4 +26,8 @@ func main() {
 	}
 
 	fmt.Println(parseJsonObject)
+
+	s, _ := parseJsonObject.ToJsonString()
+
+	fmt.Println(s)
 }
